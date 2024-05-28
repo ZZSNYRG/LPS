@@ -1,0 +1,29 @@
+14:38:01 **** Incremental Build of configuration Debug for project Transmitter_RF ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:133:33: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  133 |                                 sprintf(myRxData, "%02X %02X %02X %02X %02X %02X \r\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
+      |                                 ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "MY_NRF24.h"
+  +++ |+#include <stdio.h>
+   22 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:133:33: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  133 |                                 sprintf(myRxData, "%02X %02X %02X %02X %02X %02X \r\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
+      |                                 ^~~~~~~
+../Core/Src/main.c:133:33: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "Transmitter_RF.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Repo\LPS\Transmitter_RF\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Transmitter_RF.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Transmitter_RF.elf
+ 
+arm-none-eabi-size   Transmitter_RF.elf 
+arm-none-eabi-objdump -h -S  Transmitter_RF.elf  > "Transmitter_RF.list"
+   text	   data	    bss	    dec	    hex	filename
+  27572	    108	   2544	  30224	   7610	Transmitter_RF.elf
+Finished building: default.size.stdout
+ 
+Finished building: Transmitter_RF.list
+ 
+
+14:38:03 Build Finished. 0 errors, 2 warnings. (took 2s.496ms)
+

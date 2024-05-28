@@ -1,0 +1,10 @@
+08:54:39 **** Incremental Build of configuration Debug for project RX_F303RE ****
+make -j16 all 
+arm-none-eabi-size   RX_F303RE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24832	    108	   2408	  27348	   6ad4	RX_F303RE.elf
+Finished building: default.size.stdout
+ 
+
+08:54:40 Build Finished. 0 errors, 0 warnings. (took 1s.205ms)
+

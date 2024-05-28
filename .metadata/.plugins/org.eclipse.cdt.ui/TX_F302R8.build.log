@@ -1,0 +1,33 @@
+15:59:55 **** Build of configuration Debug for project TX_F302R8 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartSendData':
+../Core/Src/main.c:356:25: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  356 |                         sprintf(formattedPayload, "%02X %02X %02X %02X %02X %02X \r\n", payload[0], payload[1], payload[2], payload[3], payload[4], payload[5]);
+      |                         ^~~~~~~
+../Core/Src/main.c:23:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   22 | #include "MY_NRF24.h"
+  +++ |+#include <stdio.h>
+   23 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:356:25: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  356 |                         sprintf(formattedPayload, "%02X %02X %02X %02X %02X %02X \r\n", payload[0], payload[1], payload[2], payload[3], payload[4], payload[5]);
+      |                         ^~~~~~~
+../Core/Src/main.c:356:25: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+At top level:
+../Core/Src/main.c:80:22: warning: 'queueLen' defined but not used [-Wunused-const-variable=]
+   80 | static const uint8_t queueLen = 1;
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "TX_F302R8.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Repo\LPS\TX_F302R8\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TX_F302R8.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TX_F302R8.elf
+ 
+arm-none-eabi-size   TX_F302R8.elf 
+arm-none-eabi-objdump -h -S  TX_F302R8.elf  > "TX_F302R8.list"
+   text	   data	    bss	    dec	    hex	filename
+  40216	    112	   9144	  49472	   c140	TX_F302R8.elf
+Finished building: default.size.stdout
+ 
+Finished building: TX_F302R8.list
+ 
+
+15:59:59 Build Finished. 0 errors, 3 warnings. (took 4s.330ms)
+

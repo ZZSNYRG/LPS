@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;RX_F303RE/Transmitter_RF Debug.launch&apos; to &apos;RX_F303RE Debug.launch&apos;" description="Rename resource &apos;Transmitter_RF Debug.launch&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Transmitter_RF Debug.launch" name="RX_F303RE Debug.launch" stamp="1698871466737" updateReferences="true"/>
+</session>
